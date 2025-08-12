@@ -7,9 +7,11 @@ export default function Home() {
   //(just like server logs when using node js server)
 
   return (
-    <main>
+    <>
       <h1>Welcome Home</h1>
-      <Link href="/about">About</Link>
-    </main>
+      <Link href="/blog">Blog</Link>
+      <br></br>
+      <Link href="/products">Products</Link>
+    </>
   );
 }

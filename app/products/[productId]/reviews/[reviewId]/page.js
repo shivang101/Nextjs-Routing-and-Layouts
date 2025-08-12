@@ -1,7 +1,18 @@
 import { notFound } from "next/navigation";
 
-export default async function ProductReview({ params }) {
+export async function generateMetadata({ params }) {
   const { productId, reviewId } = await params;
+
+  return {
+    title: `${productId} | ${reviewId} check`
+  }
+}
+
+export default async function ProductReview({ params }) {
+
+  const { productId, reviewId } = await params;
+
+
 
   if (reviewId >= 100) {
     // not found from the same folder dominates over global not found

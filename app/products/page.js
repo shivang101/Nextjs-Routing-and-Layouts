@@ -1,12 +1,33 @@
+import Link from "next/link";
+
 export default function ProductList() {
+  const productId = 100;
   return (
     <>
+      <Link href="/">Home</Link>
       <h1>Product List</h1>
       <ol>
-        <ul>Product 1 </ul>
-        <ul>Product 2 </ul>
-        <ul>Product 3 </ul>
-        <ul>Product 4 </ul>
+        <ul>
+          <Link href="/products/1">
+            Product 1
+          </Link>
+        </ul>
+        <ul>
+          <Link href="/products/2">
+            Product 2
+          </Link>
+        </ul>
+        <ul>
+          <Link href="/products/3" replace>
+            Product 3
+          </Link>
+        </ul>
+        <ul>
+          <Link href={`/products/${productId}`}>
+            Product {productId}
+          </Link>
+        </ul>
+
       </ol>
     </>
   );
