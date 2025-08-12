@@ -1,3 +1,18 @@
+export async function generateMetadata({ params }) {
+  // const id = (await params).productId;
+  const { productId: id } = await params;
+
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`iPhone ${id}`);
+    }, 5000);
+  })
+
+  return {
+    title: `You're looking for ${title}`,
+  };
+}
+
 export default async function ProductDetails({ params }) {
   const { productId } = await params;
   return (

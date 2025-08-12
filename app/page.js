@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Header from "../components/header";
 
 export default function Home() {
   console.log("Executing.....");
@@ -10,6 +9,7 @@ export default function Home() {
   return (
     <main>
       <h1>Welcome Home</h1>
+      <Link href="/about">About</Link>
     </main>
   );
 }

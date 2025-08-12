@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: {
+    absolute: "yolo"
+  }
+
+}
+
 export default function BlogPage() {
   return (
     <>
