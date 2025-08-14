@@ -1,12 +1,14 @@
 import Link from "next/link";
 
-
 export default async function NewsArticle({ params, searchParams }) {
     const { articleid: id } = await params
     console.log(id);
 
     const { lang = "en" } = await searchParams;
-    console.log(await (params));
+
+
+
+
 
     return (
 
@@ -16,10 +18,12 @@ export default async function NewsArticle({ params, searchParams }) {
             <p className="px-4 font-sans text-lg" >Reading in Language {lang}</p>
 
             <div className="px-4 m-6">
-                <Link className="px-3 py-1 hover:text-blue-600" href={`/articles/${id}?lang=en`}>English</Link>
-                <Link className="px-3 py-1 hover:text-blue-600" href={`/articles/${id}?lang=es`}>Spanish</Link>
-                <Link className="px-3 py-1 hover:text-blue-600" href={`/articles/${id}?lang=fr`}>French</Link>
+                <Link className={`${lang === 'en' ? 'px-3 py-1 text-red-600 hover:text-blue-600' : 'px-3 py-1 hover:text-blue-600'}`} href={`/articles/${id}?lang=en`}>English</Link>
+
+                <Link className={`${lang === 'es' ? 'px-3 py-1 text-red-600 hover:text-blue-600' : 'px-3 py-1 hover:text-blue-600'}`} href={`/articles/${id}?lang=es`}>Spanish</Link>
+
+                <Link className={`${lang === 'fr' ? 'px-3 py-1 text-red-600 hover:text-blue-600' : 'px-3 py-1 hover:text-blue-600'}`} href={`/articles/${id}?lang=fr`}>French</Link>
             </div>
-        </div>
+        </div >
     )
 }

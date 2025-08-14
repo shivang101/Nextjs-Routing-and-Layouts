@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const { productId, reviewId } = await params;
@@ -16,7 +16,8 @@ export default async function ProductReview({ params }) {
 
   if (reviewId >= 100) {
     // not found from the same folder dominates over global not found
-    notFound();
+    redirect("/products")
+    // notFound();
   }
   return (
     <>
